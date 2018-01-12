@@ -11,7 +11,6 @@ Contents
 --------
 
 .. toctree::
-   :numbered:
    :maxdepth: 2
 
    Introduction
@@ -20,7 +19,9 @@ Contents
    Using
    Config
    Param
+   Background
    Weighting
+   Flagging
    Measurements
    references
 

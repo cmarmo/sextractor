@@ -81,7 +81,7 @@ language = None
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
 #
-today = 'Mon Nov 06 2017'
+today = 'Fri Dec 29 2017'
 #
 # Else, today_fmt is used as the format for a strftime call.
 #
@@ -90,7 +90,7 @@ today = 'Mon Nov 06 2017'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ['keys.rst']
+exclude_patterns = ['global.rst','keys.rst','roles.rst']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
