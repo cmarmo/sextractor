@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - develop
+      - build-matrix
   pull_request:
     branches:
       - master
