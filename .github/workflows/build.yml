@@ -12,19 +12,25 @@ on:
   workflow_dispatch:
 
 jobs:
-
-  build-on-linux:
-    name: compile on linux Ubuntu
+  build-and-test:
+    name: Build and Test
     continue-on-error: false
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install dependency
-        run: |
-          sudo apt-get install libatlas-base-dev libfftw3-dev libplplot-dev libcfitsio-dev
-      - name: Build on Linux Ubuntu
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+          run: |
+            sudo apt-get install libatlas-base-dev libfftw3-dev libplplot-dev libcfitsio-dev
+        if: ${{ matrix.os == 'mac-latest' }}
+          run: |
+            brew install atlas fftw plplot cfitsio
+      - name: Build
         run: |
           ./autogen.sh
           ./configure
